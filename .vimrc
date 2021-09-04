@@ -1,6 +1,5 @@
 " Installed plugins:
 "  - vim-coc
-"  - vim-kotlin (vim-kotlin-git in AUR)
 
 " Installed theme:
 "  - Gruvbox (vim-gruvbox-community in AUR)
@@ -76,7 +75,6 @@ autocmd FileType netrw setlocal cc=
 
 let g:coc_global_extensions=[
     \ 'coc-java',
-    \ 'coc-kotlin',
     \ 'coc-rust-analyzer',
     \ 'coc-toml',
     \ 'coc-tsserver',
