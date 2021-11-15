@@ -1,0 +1,15 @@
+/*
+!/global/
+/global/*
+!/global/doas.conf
+!/.config/
+/.config/*
+!/.config/fish/
+/.config/fish/*
+!/.config/fish/config.fish
+!/.vim/
+/.vim/*
+!/.vim/coc-settings.json
+!/.gitignore
+!/.profile
+!/.vimrc
