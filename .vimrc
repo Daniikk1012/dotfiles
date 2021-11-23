@@ -86,3 +86,8 @@ let g:coc_global_extensions=[
 " Configure mouse cursor
 
 set mouse=a
+
+" Coc bindings
+
+noremap [c :call CocAction('diagnosticPrevious')<cr>
+noremap ]c :call CocAction('diagnosticNext')<cr>
