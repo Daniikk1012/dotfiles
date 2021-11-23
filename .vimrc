@@ -35,8 +35,8 @@ set smartindent
 
 " Wrapped line movement
 
-map j gj
-map k gk
+noremap j gj
+noremap k gk
 
 " Syntax highlighting
 
