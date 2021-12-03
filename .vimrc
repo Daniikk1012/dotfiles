@@ -91,3 +91,5 @@ set mouse=a
 
 noremap [c :call CocAction('diagnosticPrevious')<cr>
 noremap ]c :call CocAction('diagnosticNext')<cr>
+
+command Format :call CocAction('format')
