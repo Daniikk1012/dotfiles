@@ -12,4 +12,5 @@
 !/.vim/coc-settings.json
 !/.gitignore
 !/.profile
+!/.rustfmt.toml
 !/.vimrc
