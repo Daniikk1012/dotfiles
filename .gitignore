@@ -4,6 +4,7 @@
 !/global/doas.conf
 !/.config/
 /.config/*
+!/.config/environment.d/
 !/.config/fish/
 /.config/fish/*
 !/.config/fish/config.fish
@@ -12,6 +13,5 @@
 /.vim/*
 !/.vim/coc-settings.json
 !/.gitignore
-!/.profile
 !/.rustfmt.toml
 !/.vimrc
