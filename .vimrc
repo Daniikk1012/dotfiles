@@ -82,6 +82,7 @@ let g:coc_global_extensions=[
     \ 'coc-json',
     \ 'coc-jedi',
     \ 'coc-clangd',
+    \ 'coc-lua',
 \ ]
 
 " Configure mouse cursor
