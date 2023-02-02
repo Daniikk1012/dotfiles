@@ -77,6 +77,8 @@ autocmd FileType netrw setlocal cc=
 
 packadd coc.nvim
 
+inoremap <expr> <C-X> coc#pum#visible() ? coc#pum#confirm() : "\<C-X>"
+
 let g:coc_global_extensions=[
     \ 'coc-java',
     \ 'coc-rust-analyzer',
