@@ -75,6 +75,8 @@ autocmd FileType netrw setlocal cc=
 
 " Vim-coc extensions
 
+packadd coc.nvim
+
 let g:coc_global_extensions=[
     \ 'coc-java',
     \ 'coc-rust-analyzer',
