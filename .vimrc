@@ -77,8 +77,6 @@ autocmd FileType netrw setlocal cc=
 
 packadd coc.nvim
 
-inoremap <expr> <C-X> coc#pum#visible() ? coc#pum#confirm() : "\<C-X>"
-
 let g:coc_global_extensions=[
     \ 'coc-java',
     \ 'coc-rust-analyzer',
@@ -96,7 +94,9 @@ set mouse=a
 
 " Coc bindings
 
-noremap [c :call CocAction('diagnosticPrevious')<cr>
-noremap ]c :call CocAction('diagnosticNext')<cr>
+inoremap <expr> <C-X> coc#pum#visible() ? coc#pum#confirm() : "\<C-X>"
 
-command Format :call CocAction('format')
+noremap [c <Plug>(coc-diagnostic-prev)
+noremap ]c <Plug>(coc-diagnostic-next)
+
+noremap <leader>f <Plug>(coc-format)
