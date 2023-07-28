@@ -99,4 +99,5 @@ inoremap <expr> <C-X> coc#pum#visible() ? coc#pum#confirm() : "\<C-X>"
 noremap [c <Plug>(coc-diagnostic-prev)
 noremap ]c <Plug>(coc-diagnostic-next)
 
+noremap <leader>r <Plug>(coc-rename)
 noremap <leader>f <Plug>(coc-format)
