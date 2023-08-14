@@ -2,6 +2,7 @@
 !/global/
 /global/*
 !/global/doas.conf
+!/.clang-format
 !/.config/
 /.config/*
 !/.config/environment.d/
