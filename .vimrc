@@ -78,6 +78,11 @@ autocmd FileType rust setlocal cc=101
 
 autocmd FileType netrw setlocal cc=
 
+" Add relative numbers
+
+set number
+set relativenumber
+
 " Vim-coc extensions
 
 packadd coc.nvim
