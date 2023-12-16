@@ -98,6 +98,8 @@ let g:coc_global_extensions=[
     \ 'coc-jedi',
     \ 'coc-clangd',
     \ 'coc-lua',
+    \ 'coc-css',
+    \ 'coc-html',
 \ ]
 
 " Configure mouse cursor
