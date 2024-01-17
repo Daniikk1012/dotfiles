@@ -59,9 +59,10 @@ set ttimeoutlen=0
 
 set showcmd
 
-" Assembly
+" Default filetypes
 
 let g:asmsyntax='nasm'
+let g:tex_flavor='latex'
 
 " Search
 
@@ -100,6 +101,7 @@ let g:coc_global_extensions=[
     \ 'coc-lua',
     \ 'coc-css',
     \ 'coc-html',
+    \ 'coc-texlab',
 \ ]
 
 " Configure mouse cursor
