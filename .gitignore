@@ -13,6 +13,7 @@
 !/.vim/
 /.vim/*
 !/.vim/coc-settings.json
+!/.vim/eclipse-java-google-style.xml
 !/.gitignore
 !/.rustfmt.toml
 !/.vimrc
