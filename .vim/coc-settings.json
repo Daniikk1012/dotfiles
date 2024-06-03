@@ -6,6 +6,9 @@
   "rust-analyzer.check.command": "clippy",
   "html.format.wrapLineLength": 80,
   "texlab.build.onSave": true,
+  "[kotlin]": {
+    "coc.preferences.formatOnSave": false
+  },
   "languageserver": {
     "cmake": {
       "command": "cmake-language-server",
@@ -43,6 +46,12 @@
       "filetypes": [
         "haskell",
         "lhaskell"
+      ]
+    },
+    "kotlin": {
+      "command": "kotlin-language-server",
+      "filetypes": [
+        "kotlin"
       ]
     },
     "ocaml-lsp": {

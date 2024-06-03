@@ -76,6 +76,7 @@ set colorcolumn=81
 " 100 character line
 
 autocmd FileType java setlocal cc=101
+autocmd FileType kotlin setlocal cc=101
 autocmd FileType rust setlocal cc=101
 
 " Remove 80 character line in netrw
