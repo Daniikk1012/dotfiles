@@ -93,17 +93,18 @@ set relativenumber
 packadd coc.nvim
 
 let g:coc_global_extensions=[
-    \ 'coc-java',
-    \ 'coc-rust-analyzer',
-    \ 'coc-toml',
-    \ 'coc-tsserver',
-    \ 'coc-json',
-    \ 'coc-jedi',
     \ 'coc-clangd',
-    \ 'coc-lua',
     \ 'coc-css',
     \ 'coc-html',
+    \ 'coc-java',
+    \ 'coc-jedi',
+    \ 'coc-json',
+    \ 'coc-lua',
+    \ 'coc-rust-analyzer',
     \ 'coc-texlab',
+    \ 'coc-toml',
+    \ 'coc-tsserver',
+    \ 'coc-xml',
 \ ]
 
 " Configure mouse cursor
