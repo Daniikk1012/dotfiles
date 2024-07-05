@@ -122,4 +122,4 @@ noremap <leader>r <Plug>(coc-rename)
 noremap <leader>f <Plug>(coc-format)
 
 noremap <expr> K CocHasProvider('hover') ? CocActionAsync('doHover') : "K"
-noremap <expr> gd CocHasProvider('declaration') ? CocActionAsync('jumpDeclaration') : "gd"
+noremap <expr> gd CocHasProvider('definition') ? CocActionAsync('jumpDefinition') : "gd"
