@@ -88,6 +88,10 @@ autocmd FileType netrw setlocal cc=
 set number
 set relativenumber
 
+" Load local .vimrc
+
+set exrc
+
 " Vim-coc extensions
 
 packadd coc.nvim
