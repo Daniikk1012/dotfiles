@@ -62,7 +62,7 @@ set showcmd
 
 " Default filetypes
 
-let g:asmsyntax='nasm'
+let g:asmsyntax='fasm'
 let g:tex_flavor='latex'
 
 " Search
