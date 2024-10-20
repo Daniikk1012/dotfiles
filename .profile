@@ -1,6 +1,6 @@
 ANDROID_SDK_ROOT=$HOME/Coding/android/sdk
 ANDROID_HOME=$ANDROID_SDK_ROOT
-JAVA_HOME=/usr/lib/jvm/openjdk-17
+JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 PATH=$HOME/.local/bin:$PATH
 PATH=$HOME/.dotnet/tools:$PATH
 PATH=$HOME/.cargo/bin:$PATH
