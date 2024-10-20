@@ -6,6 +6,7 @@
 /.config/fish/*
 !/.config/fish/config.fish
 !/.profile
+!/.root/
 !/.vim/
 /.vim/*
 !/.vim/coc-settings.json
