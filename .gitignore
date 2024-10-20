@@ -1,15 +1,10 @@
 /*
-!/global/
-/global/*
-!/global/doas.conf
 !/.clang-format
 !/.config/
 /.config/*
-!/.config/environment.d/
 !/.config/fish/
 /.config/fish/*
 !/.config/fish/config.fish
-!/.config/kdeglobals
 !/.vim/
 /.vim/*
 !/.vim/coc-settings.json

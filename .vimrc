@@ -1,8 +1,12 @@
 " Installed plugins:
-"  - vim-coc
+"  - vim-plug
 
-" Installed theme:
-"  - Gruvbox (vim-gruvbox-community in AUR)
+" Install using vim-plug
+
+call plug#begin()
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'morhetz/gruvbox'
+call plug#end()
 
 " Enable filetype detection
 
@@ -93,8 +97,6 @@ set relativenumber
 set exrc
 
 " Vim-coc extensions
-
-packadd coc.nvim
 
 let g:coc_global_extensions=[
     \ 'coc-clangd',
