@@ -101,6 +101,7 @@ set exrc
 let g:coc_global_extensions=[
     \ 'coc-clangd',
     \ 'coc-css',
+    \ 'coc-diagnostic',
     \ 'coc-html',
     \ 'coc-java',
     \ 'coc-jedi',
