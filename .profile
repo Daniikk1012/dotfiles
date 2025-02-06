@@ -1,9 +1,9 @@
 export ANDROID_SDK_ROOT=$HOME/Coding/android/sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.dotnet/tools:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export VISUAL=vim
 export EDITOR=vim
 export MOZ_USE_XINPUT2=1
