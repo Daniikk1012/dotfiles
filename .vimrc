@@ -57,6 +57,7 @@ let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
 " Speed up
+
 set timeout
 set timeoutlen=1000
 set ttimeoutlen=0
@@ -69,6 +70,10 @@ set showcmd
 
 let g:asmsyntax='fasm'
 let g:tex_flavor='latex'
+
+" Scheme settings
+
+autocmd FileType scheme setlocal lw+=define-library
 
 " Search
 
