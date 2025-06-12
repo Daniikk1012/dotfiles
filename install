@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+# ONLY INSTALLS HOME FILES. NO SCRIPT IS PROVIDED FOR ROOT
+set -e
+PREFIX=$(realpath $(dirname "$0"))
+ESCAPED_PREFIX=$(echo "$PREFIX" | sed 's/[]\/$*.^[]/\\&/g') # https://stackoverflow.com/a/2705678
+find "$PREFIX" -type f ! -path "$PREFIX/.git/*" ! -path "$PREFIX/root/*" ! -name install | sed "s/$ESCAPED_PREFIX\\///" | while read file
+do
+    ln -s "$PREFIX/$file" "$HOME/$file"
+done
