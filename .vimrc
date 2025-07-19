@@ -32,6 +32,8 @@ autocmd FileType cmake setlocal ts=2 sts=2 sw=2
 autocmd FileType haskell setlocal ts=2 sts=2 sw=2
 autocmd FileType ocaml setlocal ts=2 sts=2 sw=2
 autocmd FileType scheme setlocal ts=2 sts=2 sw=2
+autocmd FileType dart setlocal ts=2 sts=2 sw=2
+autocmd FileType j setlocal ts=2 sts=2 sw=2
 
 " Tab indent
 
@@ -117,7 +119,6 @@ let g:coc_global_extensions=[
     \ 'coc-texlab',
     \ 'coc-toml',
     \ 'coc-tsserver',
-    \ 'coc-xml',
 \ ]
 
 " Configure mouse cursor
