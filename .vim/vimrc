@@ -1,13 +1,3 @@
-" Installed plugins:
-"  - vim-plug
-
-" Install using vim-plug
-
-call plug#begin()
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'morhetz/gruvbox'
-call plug#end()
-
 " Enable filetype detection
 
 filetype on
@@ -24,6 +14,9 @@ set shiftwidth=4
 
 autocmd FileType html setlocal ts=2 sts=2 sw=2
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+autocmd FileType javascriptreact setlocal ts=2 sts=2 sw=2
+autocmd FileType typescript setlocal ts=2 sts=2 sw=2
+autocmd FileType typescriptreact setlocal ts=2 sts=2 sw=2
 autocmd FileType css setlocal ts=2 sts=2 sw=2
 autocmd FileType json setlocal ts=2 sts=2 sw=2
 autocmd FileType xml setlocal ts=2 sts=2 sw=2
@@ -34,6 +27,11 @@ autocmd FileType ocaml setlocal ts=2 sts=2 sw=2
 autocmd FileType scheme setlocal ts=2 sts=2 sw=2
 autocmd FileType dart setlocal ts=2 sts=2 sw=2
 autocmd FileType j setlocal ts=2 sts=2 sw=2
+autocmd FileType markdown setlocal ts=2 sts=2 sw=2
+
+" Automatic wrapping for mostly-text filetypes
+
+autocmd FileType typst setlocal tw=80
 
 " Tab indent
 
@@ -54,9 +52,12 @@ noremap k gk
 
 syntax on
 set background=dark
-set termguicolors
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+colorscheme retrobox
+
+" Show tab characters
+
+set list
+set listchars=tab:▸\ ,trail:·
 
 " Speed up
 
@@ -100,40 +101,16 @@ autocmd FileType netrw setlocal cc=
 set number
 set relativenumber
 
-" Load local .vimrc
-
-set exrc
-
-" Vim-coc extensions
-
-let g:coc_global_extensions=[
-    \ 'coc-clangd',
-    \ 'coc-css',
-    \ 'coc-diagnostic',
-    \ 'coc-html',
-    \ 'coc-java',
-    \ 'coc-jedi',
-    \ 'coc-json',
-    \ 'coc-lua',
-    \ 'coc-rust-analyzer',
-    \ 'coc-texlab',
-    \ 'coc-toml',
-    \ 'coc-tsserver',
-\ ]
-
 " Configure mouse cursor
 
 set mouse=a
 
-" Coc bindings
+" Syntax completion
 
-inoremap <expr> <C-X> coc#pum#visible() ? coc#pum#confirm() : "\<C-X>"
+set omnifunc=syntaxcomplete#Complete
 
-noremap [c <Plug>(coc-diagnostic-prev)
-noremap ]c <Plug>(coc-diagnostic-next)
+" Load local vimrc
 
-noremap <leader>r <Plug>(coc-rename)
-noremap <leader>f <Plug>(coc-format)
-
-noremap <expr> K CocHasProvider('hover') ? CocActionAsync('doHover') : "K"
-noremap <expr> gd CocHasProvider('definition') ? CocActionAsync('jumpDefinition') : "gd"
+if filereadable('.vim/vimrc') && getcwd() != $HOME
+    source .vim/vimrc
+endif
