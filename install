@@ -2,7 +2,6 @@
 # ONLY INSTALLS HOME FILES. NO SCRIPT IS PROVIDED FOR ROOT
 set -e
 PREFIX=$(realpath $(dirname "$0"))
-ESCAPED_PREFIX=$(echo "$PREFIX" | sed 's/[]\/$*.^[]/\\&/g') # https://stackoverflow.com/a/2705678
 for file in .clang-format .config/fish/config.fish .config/kak .profile .rustfmt.toml .vim/vimrc
 do
     echo "Linking $file..."
