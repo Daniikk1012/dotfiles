@@ -1,0 +1,7 @@
+BQN: https://github.com/mlochbaum/BQN/blob/master/editors/kak/autoload/filetype/bqn.kak
+Idris: https://github.com/stoand/kakoune-idris
+J: https://github.com/communistkiro/kakoune-syntax-highlighters/blob/master/j.kak
+Typst: backported from upstream standard library
+Uiua: https://github.com/thacuber2a03/highlighters.kak/blob/main/uiua.kak
+
+Digraphs: https://github.com/ftonneau/digraphs.kak

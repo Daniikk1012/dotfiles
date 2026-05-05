@@ -1,0 +1,112 @@
+## VISUALS
+
+# Better colorscheme
+colorscheme gruvbox-dark
+
+# Useful visuals
+add-highlighter global/ number-lines -relative -separator '│'
+add-highlighter global/ show-matching
+add-highlighter global/ show-whitespaces -tab '▸' -tabpad '·' -spc '·' -lf ' ' \
+    -indent '·' -only-trailing
+add-highlighter global/ show-whitespaces -tab '▸' -tabpad ' ' -spc ' ' -lf ' ' \
+    -indent ' '
+
+# Column limiter
+set-face global LineLimitHint rgb:ebdbb2,rgb:141414
+hook global WinSetOption autowrap_column=.* %{
+    add-highlighter -override buffer/column_limiter column %sh{
+        expr $kak_opt_autowrap_column + 1
+    } LineLimitHint
+}
+
+## GENERIC FUNCTIONALITY
+
+# Options
+set-option global scrolloff 1,1                      # Space around cursor
+set-option global ui_options terminal_assistant=none # Remove clippy
+set-option global autocomplete prompt                # Remove code autocomplete
+
+# Expandtab
+map -docstring 'indent' global insert <tab> \
+    '<a-;>:execute-keys -draft \\;<lt>a-gt<gt><ret>'
+map -docstring 'unindent' global insert <s-tab> \
+    '<a-;>:execute-keys -draft \\;<lt>a-lt<gt><ret>'
+
+# Insert mode mappings
+map -docstring 'newline' global insert <s-ret> '<ret>' # Annoying
+map -docstring 'delete word' global insert <c-w> \
+    '<a-;>:execute-keys -draft bd<ret>'                # Delete word
+
+# Normal mode mappings
+map -docstring 'comment line' global normal '#' ':comment-line<ret>' # Comment
+
+# Load .kak/kakrc if exists
+try %{ source .kak/kakrc }
+
+# Autocomplete for ctags
+hook global WinCreate .* ctags-enable-autocomplete
+
+## PER FILETYPE FUNCTIONALITY
+
+# Files with autowrap
+hook global WinSetOption filetype=(git-commit|latex|markdown|typst) %{
+    autowrap-enable
+}
+
+# Files with 2-space tabs
+hook global WinSetOption filetype=(bqn|haskell|j|idris|typst|uiua|yaml) %{
+    set-option buffer indentwidth 2
+}
+# Files with tabs for indentation
+hook global WinSetOption filetype=go %{ set-option buffer indentwidth 0 }
+
+# Files with 100-line limits
+hook global WinSetOption filetype=(groovy|java|rust) %{
+    set-option buffer autowrap_column 100
+}
+
+# Comments
+hook global BufSetOption filetype=typst %{
+    set-option buffer comment_line '//'
+    set-option buffer comment_block_begin '/*'
+    set-option buffer comment_block_end '*/'
+}
+
+# Autoreload
+hook global BufSetOption filetype=uiua %{ set-option buffer autoreload true }
+
+## INTEGRATIONS
+
+# Terminal integration
+hook global ModuleLoaded x11|wayland %{ set global termcmd 'ghostty -e sh -c' }
+
+# Git branch on status line
+declare-option -docstring "name of the git branch holding the current buffer" \
+    str modeline_git_branch
+hook global WinCreate .* %{
+    hook window NormalIdle .* %{ evaluate-commands %sh{
+        branch=$(cd "$(dirname "${kak_buffile}")" &&
+            git rev-parse --abbrev-ref HEAD 2>/dev/null)
+        if [ -n "${branch}" ]; then
+            printf 'set window modeline_git_branch %%{%s}' "${branch}"
+        fi
+    } }
+}
+hook global WinCreate .* %{ evaluate-commands %sh{
+    is_work_tree=$(cd "$(dirname "${kak_buffile}")" &&
+        git rev-parse --is-inside-work-tree 2>/dev/null)
+    if [ "${is_work_tree}" = 'true' ]; then
+        printf 'set-option window modelinefmt %%{%s}' \
+            " %opt{modeline_git_branch} ${kak_opt_modelinefmt}"
+    fi 
+}}
+
+# Ripgrep instead of grep
+set-option global grepcmd 'rg --vimgrep'
+
+## PLUGIN CONFIGURATION
+
+# Digraphs
+digraphs-enable-on <c-K> <c-k>
+digraphs-use-postfix ''
+digraphs-include-word no
