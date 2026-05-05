@@ -1,6 +1,6 @@
 export ANDROID_SDK_ROOT=$HOME/Coding/android/sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-25-openjdk-amd64
 export PATH=$HOME/.dotnet/tools:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
