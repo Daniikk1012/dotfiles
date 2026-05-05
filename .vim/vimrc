@@ -28,14 +28,20 @@ autocmd FileType scheme setlocal ts=2 sts=2 sw=2
 autocmd FileType dart setlocal ts=2 sts=2 sw=2
 autocmd FileType j setlocal ts=2 sts=2 sw=2
 autocmd FileType markdown setlocal ts=2 sts=2 sw=2
+autocmd FileType uiua setlocal ts=2 sts=2 sw=2
 
 " Automatic wrapping for mostly-text filetypes
 
 autocmd FileType typst setlocal tw=80
+autocmd FileType markdown setlocal tw=80
 
 " Tab indent
 
 autocmd FileType make setlocal noexpandtab
+
+" Turn off tabs for Godot
+
+let g:gdscript_recommended_style = 0
 
 " Auto indent
 
