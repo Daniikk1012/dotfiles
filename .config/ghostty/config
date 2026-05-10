@@ -1,0 +1,19 @@
+command = fish
+
+theme = Adwaita Dark
+
+font-family = ""
+font-family = Iosevka Term Extended
+font-synthetic-style = false
+font-size = 11
+font-feature = -calt, -dalt, -liga, -dlig
+font-codepoint-map = U+25F8-U+25FA,U+25FF=Iosevka Term Extended
+
+mouse-scroll-multiplier = 3
+mouse-hide-while-typing = true
+
+keybind = ctrl+shift+bracket_left=goto_split:previous
+keybind = ctrl+shift+bracket_right=goto_split:next
+
+window-width = 80
+window-height = 27
