@@ -7,6 +7,6 @@ for file in .clang-format .config/fish/config.fish .config/ghostty .config/kak \
 do
     echo "Linking $file..."
     test \( ! -e "$HOME/$file" \) -o \( -L "$HOME/$file" \)
-    ln -sf "$PREFIX/$file" "$HOME/$file"
+    ln -sfT "$PREFIX/$file" "$HOME/$file"
 done
 echo 'Done!'
