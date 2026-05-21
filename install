@@ -3,7 +3,7 @@
 set -e
 PREFIX=$(realpath $(dirname "$0"))
 for file in .clang-format .config/fish/config.fish .config/ghostty .config/kak \
-            .profile .rustfmt.toml .vim/vimrc
+            .gradle/init.gradle .profile .rustfmt.toml .tmux.conf .vim/vimrc
 do
     echo "Linking $file..."
     test \( ! -e "$HOME/$file" \) -o \( -L "$HOME/$file" \)
