@@ -1,0 +1,28 @@
+#!/usr/bin/env uiua
+
+DefaultColumns ← 80
+
+Columns ← ⍣(
+  DefaultColumns°[]
+| DefaultColumns◌°□₁
+| ˙⍤×⊸⊃(>0|=0◿1)⋕◌°□₂
+| °□⊢⊙DefaultColumns
+  $$ error!
+  $$ usage: _ [cols]
+  $$   cols - target amount of columns (default _)
+  &exit 1 &ep
+)&args
+
+Text   ← &rs ∞ 0
+Indent ← ↙⨂⊙0⊸∊" \t"Text
+
+⊜□¬⊸∊" \t\r\n"Text
+⊙◌⍢(
+  ⍣(⍜(°□⊣)(
+      ⊙(°□°⊂)
+      ⨬(⊂Indent◌|˙⍤≤Columns⊸⧻$"_ _")>0⊸⧻
+    )
+  | ⊂⊙(□""))
+| >0◡⋅⧻
+){""}
+&p/◇$"_\n_"
