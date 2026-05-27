@@ -1,0 +1,8 @@
+#!/usr/bin/env uiua
+&rs∞0                                            # read all stdin
+⊕□-⟜(×¬)⟜\+⊸=@\n                                 # split into lines
+¬⊸↥⊸∩⌟≡⌞◇⍣(≍⟜(↙⧻)|⋅⋅0)∩⌞˜⊂@ "package""import"    # find normal and import lines
+⊃∩⌟▽⋅⊙∘                                          # select those lines
+▽¬×⊃(≥@0|≤@9)⊜⊃⊢□↥∩×⊃(≥@A|≤@Z|≥@0|≤@9)⊸⌵/◇$"_ _" # all names in normal lines
+⊙⍚(↘+1⊣⊚⊸=@.°$"import _;")                       # all imported names
+&p/◇$"_\n_"▽⍜▽×⤙⤚⋅≡⋅1∊                           # remove unused imports

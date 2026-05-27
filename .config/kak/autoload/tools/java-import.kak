@@ -9,7 +9,7 @@ define-command \
         echo done
     }
 
-define-command java-import -docstring 'automatic imports' -params ..1 %{
+define-command -docstring 'automatic imports' -params ..1 java-import %{
     evaluate-commands %sh{
         printf 'execute-keys -draft "O'
         for classname in ${1:-${kak_selection}}
@@ -19,4 +19,8 @@ define-command java-import -docstring 'automatic imports' -params ..1 %{
         echo '<backspace><esc>"'
     }
     execute-keys d
+}
+
+define-command -docstring 'remove unused imports' -params 0 java-clean-imports %{
+    execute-keys -draft '%|clean-imports<ret>'
 }
