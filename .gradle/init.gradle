@@ -1,9 +1,9 @@
 allprojects {
     plugins.withId('java') {
+        def all = sourceSets.main.runtimeClasspath + sourceSets.main.compileClasspath +
+                  sourceSets.test.runtimeClasspath + sourceSets.test.compileClasspath
         tasks.register('printClasspath') {
             doLast {
-                def all = sourceSets.main.runtimeClasspath + sourceSets.main.compileClasspath +
-                          sourceSets.test.runtimeClasspath + sourceSets.test.compileClasspath
                 all.files.each { file ->
                     if (file.name.endsWith('.jar')) {
                         def zip = new java.util.zip.ZipFile(file)
