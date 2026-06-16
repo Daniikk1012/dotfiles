@@ -4,7 +4,7 @@ define-command \
     java-update-imports %{
         nop %sh{
             mkdir -p .kak
-            ./gradlew -q printClasspath | sort | uniq | sed 's/^/import /' | sed 's/$/;/' > .kak/imports
+            ./gradlew -q printImports | sort | uniq > .kak/imports
         }
         echo done
     }

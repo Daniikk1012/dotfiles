@@ -4,8 +4,8 @@ export JAVA_HOME=/usr/lib/jvm/default-java
 export PATH=$HOME/.dotnet/tools:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=kak
+export EDITOR=kak
 export MOZ_USE_XINPUT2=1
 
 # if running bash

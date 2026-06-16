@@ -2,7 +2,7 @@ allprojects {
     plugins.withId('java') {
         def all = sourceSets.main.runtimeClasspath + sourceSets.main.compileClasspath +
                   sourceSets.test.runtimeClasspath + sourceSets.test.compileClasspath
-        tasks.register('printClasspath') {
+        tasks.register('printImports') {
             doLast {
                 all.files.each { file ->
                     if (file.name.endsWith('.jar')) {
@@ -11,7 +11,7 @@ allprojects {
                             if (entry.name.endsWith('.class') && entry.name.indexOf('$') < 0
                                 && entry.name.indexOf('-') < 0
                             ) {
-                                println entry.name.replaceAll('/', '.') - '.class'
+                                println 'import ' + (entry.name.replaceAll('/', '.') - '.class') + ';'
                             }
                         }
                     }
