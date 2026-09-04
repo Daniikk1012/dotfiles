@@ -14,7 +14,7 @@ add-highlighter global/ show-whitespaces -tab '▸' -tabpad ' ' -spc ' ' -lf ' '
 # Column limiter
 set-face global LineLimitHint rgb:ebdbb2,rgb:141414
 hook global WinSetOption autowrap_column=.* %{
-    add-highlighter -override buffer/column_limiter column %sh{
+    add-highlighter -override window/column_limiter column %sh{
         expr $kak_opt_autowrap_column + 1
     } LineLimitHint
 }
@@ -54,22 +54,22 @@ hook global WinSetOption filetype=(git-commit|latex|markdown|typst) %{
 }
 
 # Files with 2-space tabs
-hook global WinSetOption filetype=(bqn|haskell|j|idris|typst|uiua|yaml) %{
-    set-option buffer indentwidth 2
+hook global WinSetOption filetype=(bqn|haskell|idris|j|ocaml|typst|uiua|yaml) %{
+    set-option window indentwidth 2
 }
 # Files with tabs for indentation
-hook global WinSetOption filetype=go %{ set-option buffer indentwidth 0 }
+hook global WinSetOption filetype=go %{ set-option window indentwidth 0 }
 
 # Files with 100-line limits
 hook global WinSetOption filetype=(groovy|java|rust) %{
-    set-option buffer autowrap_column 100
+    set-option window autowrap_column 100
 }
 
 # Comments
-hook global BufSetOption filetype=typst %{
-    set-option buffer comment_line '//'
-    set-option buffer comment_block_begin '/*'
-    set-option buffer comment_block_end '*/'
+hook global WinSetOption filetype=typst %{
+    set-option window comment_line '//'
+    set-option window comment_block_begin '/*'
+    set-option window comment_block_end '*/'
 }
 
 # Autoreload
