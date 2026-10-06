@@ -54,9 +54,11 @@ hook global WinSetOption filetype=(git-commit|latex|markdown|typst) %{
 }
 
 # Files with 2-space tabs
-hook global WinSetOption filetype=(bqn|haskell|idris|j|ocaml|typst|uiua|yaml) %{
-    set-option window indentwidth 2
-}
+hook global WinSetOption \
+    filetype=(bqn|haskell|idris|j|markdown|ocaml|typst|uiua|yaml) \
+    %{
+        set-option window indentwidth 2
+    }
 # Files with tabs for indentation
 hook global WinSetOption filetype=go %{ set-option window indentwidth 0 }
 
